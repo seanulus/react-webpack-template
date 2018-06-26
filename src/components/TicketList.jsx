@@ -24,6 +24,11 @@ let masterTicketsList = [
 function TicketList(){
   return(
     <div>
+      <style jsx>{`
+        div {
+          display: flex;
+        }
+      `}</style>
       <hr/>
       {masterTicketsList.map((ticket, index) =>
         <Ticket names = {ticket.names}
