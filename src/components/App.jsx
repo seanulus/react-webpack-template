@@ -1,7 +1,8 @@
 import React from 'react';
-// import Moment from 'moment';
+import Admin from './Admin';
 import TicketList from './TicketList';
 import Header from './Header';
+// import PropTypes from 'prop-types';
 import NewTicketControl from './NewTicketControl';
 import { Switch, Route } from 'react-router-dom';
 
@@ -48,6 +49,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' render={()=><TicketList ticketList={this.state.masterTicketList} />} />
           <Route path='/newticket' render={()=><NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList} />} />
+          <Route path='/admin' render={(props)=><Admin ticketList={this.state.masterTicketList} currentRouterPath={props.location.pathname}/>} />
         </Switch>
       </div>
     );
