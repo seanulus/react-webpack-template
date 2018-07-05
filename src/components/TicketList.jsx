@@ -11,21 +11,23 @@ function TicketList(props){
           display: flex;
         }
       `}</style>
-      {props.ticketList.map((ticket) =>
-        <Ticket names = {ticket.names}
+      {Object.keys(props.ticketList).map(function(ticketId) {
+        let ticket = props.ticketList[ticketId];
+        return <Ticket names = {ticket.names}
           location = {ticket.location}
           issue = {ticket.issue}
           formattedWaitTime={ticket.formattedWaitTime}
           currentRouterPath={props.currentRouterPath}
           key={ticket.id}
-          onTicketSelection={props.onTicketSelection}/>
-      )}
+          onTicketSelection={props.onTicketSelection}
+          ticketId={ticket.id}/>;
+      })}
     </div>
   );
 }
 
 TicketList.propTypes = {
-  ticketList: PropTypes.array,
+  ticketList: PropTypes.object,
   currentRouterPath: PropTypes.string,
   onTicketSelection: PropTypes.func
 };
