@@ -18,9 +18,9 @@ function TicketList(props){
           issue = {ticket.issue}
           formattedWaitTime={ticket.formattedWaitTime}
           currentRouterPath={props.currentRouterPath}
-          key={ticket.id}
+          key={ticketId}
           onTicketSelection={props.onTicketSelection}
-          ticketId={ticket.id}/>;
+          ticketId={ticketId}/>;
       })}
     </div>
   );
