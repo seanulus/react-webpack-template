@@ -19,7 +19,6 @@ function TicketList(props){
           formattedWaitTime={ticket.formattedWaitTime}
           currentRouterPath={props.currentRouterPath}
           key={ticketId}
-          onTicketSelection={props.onTicketSelection}
           ticketId={ticketId}/>;
       })}
     </div>
@@ -29,7 +28,6 @@ function TicketList(props){
 TicketList.propTypes = {
   ticketList: PropTypes.object,
   currentRouterPath: PropTypes.string,
-  onTicketSelection: PropTypes.func
 };
 
 export default TicketList;
